@@ -1,0 +1,117 @@
+body {
+  background-color: #5f9ea0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+h1 {
+  color: white;
+  margin-top: 60px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.edit-button {
+  background-color: #edc900;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #fbe14f;
+}
+
+.delete-button {
+  background-color: #f81f4a;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #b82442;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.list-text {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  text-align: left; 
+  word-break: break-all;
+}
+
+.list-action {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.create-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.create-input {
+  flex: 1;
+  max-width: 600px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create-button {
+  background-color: #808080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #696969;
+}
