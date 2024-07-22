@@ -13,7 +13,7 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import { addTodo, updateTodo } from '../indexedDB';
+import { addTodo, updateTodo } from '../services/indexedDB';
 
 const props = defineProps({
   editIndex: Number,

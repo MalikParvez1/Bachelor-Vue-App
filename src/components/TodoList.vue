@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { deleteTodos } from '../indexedDB';
+import { deleteTodos } from '../services/indexedDB';
 
 const props = defineProps({
   todos: Array,

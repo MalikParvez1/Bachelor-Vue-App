@@ -12,10 +12,9 @@ export default defineConfig({
       disabled: false,
       config: true,
     },
-    includeAssets: ['favicon.ico'],
     manifest: {
-        short_name: 'Vue App',
-        name: 'Vue App',
+        short_name: 'Vue PWA',
+        name: 'Vue PWA',
         icons: [
           {
             src: 'logo192.png',

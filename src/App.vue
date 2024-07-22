@@ -1,48 +1,8 @@
 <template>
-    <div>
-      <h1>Vue App</h1>
-      <CreateForm
-        :editIndex="editIndex"
-        :input="input"
-        :todos="todos"
-        @setTodos="setTodos"
-        @setEditIndex="setEditIndex"
-        @setInput="setInput"
-      />
-      <TodoList
-        :todos="todos"
-        @setTodos="setTodos"
-        @setEditIndex="setEditIndex"
-        @setInput="setInput"
-      />
-    </div>
+  <AppView></AppView>
   </template>
   
   <script setup>
-  import { ref, onMounted } from 'vue';
-  import CreateForm from './components/CreateForm.vue';
-  import TodoList from './components/TodoList.vue';
-  import { getTodos } from './indexedDB';
-  
-  const todos = ref([]);
-  const input = ref('');
-  const editIndex = ref(null);
-  
-  const setTodos = (newTodos) => {
-    todos.value = newTodos;
-  };
-  
-  const setInput = (newInput) => {
-    input.value = newInput;
-  };
-  
-  const setEditIndex = (newEditIndex) => {
-    editIndex.value = newEditIndex;
-  };
-  
-  onMounted(async () => {
-    const loadedTodos = await getTodos();
-    todos.value = loadedTodos;
-  });
+  import AppView from './components/AppView.vue';
   </script>
   
