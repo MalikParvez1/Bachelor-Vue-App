@@ -6,9 +6,6 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      strategies: 'injectManifest',
-      srcDir: 'src',
-      filename: 'service-worker.js',
       manifest: {
         short_name: 'Vue PWA',
         name: 'Vue PWA',
@@ -29,20 +26,19 @@ export default defineConfig({
         theme_color: '#5f9ea0',
         background_color: '#5f9ea0',
       },
+      registerType: 'autoUpdate',
+      injectRegister: 'auto',
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: ({ request }) => request.destination === 'image',
+            urlPattern: ({ url }) => url.origin === self.location.origin || url.pathname.endsWith('/logo192.png'),
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'images',
-              expiration: {
-                maxEntries: 50,
-              },
             },
           },
         ],
-      },
+      }
     }),
   ],
 });
