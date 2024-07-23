@@ -35,62 +35,23 @@ export default defineConfig({
     },
 
     workbox: {
-      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
+      globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
       runtimeCaching: [
         {
-          urlPattern: /.*\.vue$/,
+          urlPattern: /^https:\/\/api\.example\.com\/.*/i,
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'vue-cache',
+            cacheName: 'api-cache',
             expiration: {
-              maxEntries: 30,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
+              maxEntries: 10,
+              maxAgeSeconds: 60 * 60 * 24 * 365
             },
-          },
-        },
-        {
-          urlPattern: /.*\.js$/,
-          handler: 'StaleWhileRevalidate',
-          options: {
-            cacheName: 'js-cache',
-            expiration: {
-              maxEntries: 30,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
-            },
-          },
-        },
-        {
-          urlPattern: /.*\.css$/,
-          handler: 'StaleWhileRevalidate',
-          options: {
-            cacheName: 'css-cache',
-            expiration: {
-              maxEntries: 30,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
-            },
-          },
-        },
-        {
-          urlPattern: /.*\.(png|jpg|jpeg|svg)$/,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'image-cache',
-            expiration: {
-              maxEntries: 60,
-              maxAgeSeconds: 60 * 24 * 60 * 60, // 60 Tage
-            },
-          },
-        },
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        }
       ]
-    },
-
-    devOptions: {
-      enabled: false,
-      navigateFallback: 'index.html',
-      suppressWarnings: true,
-      type: 'module',
     },
   })],
 })
