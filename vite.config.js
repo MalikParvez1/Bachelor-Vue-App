@@ -34,63 +34,63 @@ export default defineConfig({
       ,
     },
 
-    // workbox: {
-    //   globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-    //   cleanupOutdatedCaches: true,
-    //   clientsClaim: true,
-    //   runtimeCaching: [
-    //     {
-    //       urlPattern: /.*\.vue$/,
-    //       handler: 'StaleWhileRevalidate',
-    //       options: {
-    //         cacheName: 'vue-cache',
-    //         expiration: {
-    //           maxEntries: 30,
-    //           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
-    //         },
-    //       },
-    //     },
-    //     {
-    //       urlPattern: /.*\.js$/,
-    //       handler: 'StaleWhileRevalidate',
-    //       options: {
-    //         cacheName: 'js-cache',
-    //         expiration: {
-    //           maxEntries: 30,
-    //           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
-    //         },
-    //       },
-    //     },
-    //     {
-    //       urlPattern: /.*\.css$/,
-    //       handler: 'StaleWhileRevalidate',
-    //       options: {
-    //         cacheName: 'css-cache',
-    //         expiration: {
-    //           maxEntries: 30,
-    //           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
-    //         },
-    //       },
-    //     },
-    //     {
-    //       urlPattern: /.*\.(png|jpg|jpeg|svg)$/,
-    //       handler: 'CacheFirst',
-    //       options: {
-    //         cacheName: 'image-cache',
-    //         expiration: {
-    //           maxEntries: 60,
-    //           maxAgeSeconds: 60 * 24 * 60 * 60, // 60 Tage
-    //         },
-    //       },
-    //     },
-    //   ]
-    // },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+      cleanupOutdatedCaches: true,
+      clientsClaim: true,
+      runtimeCaching: [
+        {
+          urlPattern: /.*\.vue$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'vue-cache',
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
+            },
+          },
+        },
+        {
+          urlPattern: /.*\.js$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'js-cache',
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
+            },
+          },
+        },
+        {
+          urlPattern: /.*\.css$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'css-cache',
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
+            },
+          },
+        },
+        {
+          urlPattern: /.*\.(png|jpg|jpeg|svg)$/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'image-cache',
+            expiration: {
+              maxEntries: 60,
+              maxAgeSeconds: 60 * 24 * 60 * 60, // 60 Tage
+            },
+          },
+        },
+      ]
+    },
 
-    // devOptions: {
-    //   enabled: false,
-    //   navigateFallback: 'index.html',
-    //   suppressWarnings: true,
-    //   type: 'module',
-    // },
+    devOptions: {
+      enabled: false,
+      navigateFallback: 'index.html',
+      suppressWarnings: true,
+      type: 'module',
+    },
   })],
 })
