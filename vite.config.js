@@ -27,11 +27,11 @@ export default defineConfig({
         background_color: '#5f9ea0',
       },
       registerType: 'autoUpdate',
-      injectRegister: 'auto',
+      injectRegister: 'script',
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.origin === self.location.origin || url.pathname.endsWith('/logo192.png'),
+            urlPattern: ({ url }) => url.origin === self.location.origin || url.pathname.endsWith('.png'),
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'images',
